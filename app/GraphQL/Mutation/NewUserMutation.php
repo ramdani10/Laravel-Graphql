@@ -45,7 +45,7 @@ class NewUserMutation extends Mutation
             ],
             'last_name' => [
                 'name' => 'last_name',
-                'type' => Type::string()
+                'type' => Type::nonNull(Type::string())
             ],
             'avatar' => [
                 'name' => 'avatar',
@@ -61,7 +61,7 @@ class NewUserMutation extends Mutation
         if (!$user) {
             return null;
         }
-
+\Log::info($args);
         $user->user_profiles()->create($args);
         return $user;
     }

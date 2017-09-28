@@ -29,7 +29,7 @@ return [
                 'newUser' => NewUserMutation::class,
                 'updateUser' => UpdateUserMutation::class
             ],
-            'middleware' => []
+            'middleware' => [],
         ],
     ],
     // register types
@@ -41,5 +41,6 @@ return [
         'myprofile'  => MyProfileType::class
     ],
     'error_formatter' => ['\Rebing\GraphQL\GraphQL', 'formatError'],
-    'params_key'    => 'params'
+    'params_key'    => 'variables',
+    // 'variables_input_name' => 'variables',
 ];
